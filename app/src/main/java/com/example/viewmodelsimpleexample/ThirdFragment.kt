@@ -1,26 +1,24 @@
 package com.example.viewmodelsimpleexample
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
-import com.example.viewmodelsimpleexample.databinding.FragmentSecondBinding
+import com.example.viewmodelsimpleexample.databinding.FragmentThirdBinding
 
-class SecondFragment : Fragment() {
-    private var _binding: FragmentSecondBinding? = null
+class ThirdFragment: Fragment() {
+    private var _binding: FragmentThirdBinding? = null
     private val binding get() = _binding!!
 
-    // https://developer.android.com/topic/libraries/architecture/viewmodel
     private val viewModel: PersonViewModel by activityViewModels()
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentSecondBinding.inflate(inflater, container, false)
+        _binding = FragmentThirdBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -42,10 +40,6 @@ class SecondFragment : Fragment() {
         binding.buttonSecond.setOnClickListener {
             //findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
             findNavController().popBackStack()
-        }
-
-        binding.buttonNext.setOnClickListener {
-            findNavController().navigate(R.id.action_SecondFragment_to_thirdFragment)
         }
     }
 

@@ -26,6 +26,13 @@
         android:hint="Age"
         android:inputType="number" />
 
+    <EditText
+        android:id="@+id/editText_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        android:inputType="textEmailAddress" />
+
     <Button
         android:id="@+id/button_greet"
         android:layout_width="match_parent"
@@ -47,4 +54,10 @@
         android:id="@+id/textview_age"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/textview_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
 </LinearLayout>

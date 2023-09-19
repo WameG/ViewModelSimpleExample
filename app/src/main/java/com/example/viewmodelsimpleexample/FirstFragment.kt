@@ -36,8 +36,16 @@ class FirstFragment : Fragment() {
                 binding.editTextAge.error = "No age"
                 return@setOnClickListener
             }
+
+            val email = binding.editTextEmail.text.trim().toString()
+            if (email.isEmpty()) {
+                binding.editTextEmail.error = "No Email Address"
+                return@setOnClickListener
+            }
+
             viewModel.name.value = name
             viewModel.age.value = ageStr.toInt()
+            viewModel.email.value = email
         }
 
         viewModel.name.observe(viewLifecycleOwner) { name ->
@@ -46,6 +54,10 @@ class FirstFragment : Fragment() {
 
         viewModel.age.observe(viewLifecycleOwner) { age ->
             binding.textviewAge.text = "$age years old"
+        }
+
+        viewModel.email.observe(viewLifecycleOwner) { email ->
+            binding.textviewEmail.text = "$email"
         }
 
         binding.buttonNext.setOnClickListener {
